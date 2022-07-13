@@ -12,5 +12,6 @@
         <file>mainui/SideMenu.qml</file>
         <file>assets/fonts/Quicksand_Bold.otf</file>
         <file>assets/fonts/Quicksand_Book.otf</file>
+        <file>ButtonTemp.qml</file>
     </qresource>
 </RCC>
