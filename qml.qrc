@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imports/utils/qmldir</file>
+        <file>imports/utils/Style.qml</file>
+        <file>main.qml</file>
+        <file>imports/controls/Button.qml</file>
+        <file>pages/dashboard/Main.qml</file>
+        <file>pages/products/Main.qml</file>
+        <file>mainui/DashboardContent.qml</file>
+        <file>mainui/Header.qml</file>
+        <file>mainui/MainContent.qml</file>
+        <file>mainui/SideMenu.qml</file>
+        <file>assets/fonts/Quicksand_Bold.otf</file>
+        <file>assets/fonts/Quicksand_Book.otf</file>
+    </qresource>
+</RCC>
