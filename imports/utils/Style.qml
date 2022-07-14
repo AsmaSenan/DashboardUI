@@ -19,6 +19,9 @@ QtObject {
     function image(name) {
         return Qt.resolvedUrl(imgPath + name + ".png");
     }
+    function resize(value) {
+        return (value * root.scaleFactor);
+    }
 
     property string fontContrastColor: "#FFFFFF"
     property string fontBlackColor: "#000000"

@@ -8,7 +8,7 @@ import utils 1.0
 Item {
     id: root
 
-    property string currentItemName: mainMenuList.currentItemName
+    property string currentItemName: menuModel.get(mainMenuList.currentIndex).text
 
     signal menuItemClicked(var name)
     ListModel {
@@ -93,7 +93,7 @@ Item {
                         id: label
                         anchors.leftMargin: Style.resize(20)
                         anchors.verticalCenter: parent.verticalCenter
-                        anchors.verticalCenterOffset: Style.resize(3)
+//                        anchors.verticalCenterOffset: Style.resize(3)
                         text: model.text
 //                        color:  ? Style.mainColor : Style.inactiveColor
                         color: itemDelegate.ListView.isCurrentItem? Style.mainColor : "#fff"
