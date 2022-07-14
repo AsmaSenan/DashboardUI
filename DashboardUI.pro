@@ -1,4 +1,5 @@
 QT += quick
+QT += quickcontrols2
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -12,7 +13,6 @@ RESOURCES += qml.qrc
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH = \
                   $$PWD/imports \
-                  $$PWD/imports/myControls \
 
                   $$PWD/mainui
 
@@ -26,5 +26,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += imports/utils/qmldir\
             imports/myControls/qmldir
-QT_QUICK_CONTROLS_STYLE= MyControls
+
+QT_QUICK_CONTROLS_STYLE= myControls
 

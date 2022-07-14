@@ -3,6 +3,7 @@ import QtQuick.Controls 2.4
 import Qt5Compat.GraphicalEffects
 
 import utils 1.0
+import myControls
 
 
 Item {
@@ -103,7 +104,7 @@ Item {
                 onClicked: {
                     mainMenuList.currentIndex = index;
                     root.menuItemClicked(label.text);
-                    console.log(ListView.isCurrentItem)
+                    console.log(currentItemName)
                 }
             }
         }

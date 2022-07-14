@@ -1,6 +1,7 @@
 import QtQuick 2.11
 
 import utils 1.0
+import myControls
 Item {
     id: dashboardContent
 
