@@ -11,5 +11,8 @@
         <file>mainui/SideMenu.qml</file>
         <file>assets/fonts/Quicksand_Bold.otf</file>
         <file>assets/fonts/Quicksand_Book.otf</file>
+        <file>assets/header/dropdown.png</file>
+        <file>assets/header/onoff.png</file>
+        <file>assets/header/settings.png</file>
     </qresource>
 </RCC>
