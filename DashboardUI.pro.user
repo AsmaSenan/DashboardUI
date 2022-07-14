@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.2, 2022-07-14T04:54:41. -->
+<!-- Written by QtCreator 7.0.2, 2022-07-14T04:58:47. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -245,7 +245,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:E:/workplace/qmlProjects/DashboardUI/DashboardUI.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">E:/workplace/qmlProjects/DashboardUI/DashboardUI.pro</value>
-    <value type="QString" key="RunConfiguration.Arguments">-style import/utils</value>
+    <value type="QString" key="RunConfiguration.Arguments">-style import/myControls</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
