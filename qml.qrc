@@ -14,5 +14,15 @@
         <file>assets/header/dropdown.png</file>
         <file>assets/header/onoff.png</file>
         <file>assets/header/settings.png</file>
+        <file>imports/myControls/BusyIndicator.qml</file>
+        <file>imports/myControls/Button.qml</file>
+        <file>imports/myControls/CheckBox.qml</file>
+        <file>imports/myControls/Label.qml</file>
+        <file>imports/myControls/Popup.qml</file>
+        <file>imports/myControls/qmldir</file>
+        <file>imports/myControls/RadioButton.qml</file>
+        <file>imports/myControls/Slider.qml</file>
+        <file>imports/myControls/Switch.qml</file>
+        <file>imports/myControls/ToolButton.qml</file>
     </qresource>
 </RCC>

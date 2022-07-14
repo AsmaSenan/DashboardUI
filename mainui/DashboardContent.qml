@@ -1,6 +1,6 @@
 import QtQuick 2.11
 
-
+import utils 1.0
 Item {
     id: dashboardContent
 

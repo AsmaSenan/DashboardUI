@@ -1,0 +1,10 @@
+module MyControls
+BusyIndicator 2.15 BusyIndicator.qml
+Button 2.15 Button.qml
+CheckBox 2.15 CheckBox.qml
+Label 2.15 Label.qml
+Popup 2.15 Popup.qml
+RadioButton 2.15 RadioButton.qml
+Slider 2.15 Slider.qml
+Switch 2.15 Switch.qml
+ToolButton  ToolButton.qml
