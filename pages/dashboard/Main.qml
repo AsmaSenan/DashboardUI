@@ -6,19 +6,19 @@ import "../products" as Products
 Item {
     id: root
     anchors.fill: parent
-    anchors.margins: 20
+//    anchors.margins: 20
 
     objectName: "Dashboard"
 
     //TODO implement all apps in full size and tile mode
     //TODO implememt re-order items and persist positions
 
-//    Products.Main {
-//        opacity: (root.state === "Inbox") ? 1.0 : 0.0
-//        Behavior on opacity { NumberAnimation { duration: 250 } }
-//        visible: opacity > 0.0
-//        fullSize: (root.state === "Inbox")
-//    }
+    Products.Main {
+        opacity: (root.state === "Products") ? 1.0 : 0.0
+        Behavior on opacity { NumberAnimation { duration: 250 } }
+        visible: opacity > 0.0
+        fullSize: (root.state === "Products")
+    }
 
 //    Calendar.Main {
 //        opacity: (root.state === "Calendar") ? 1.0 : 0.0

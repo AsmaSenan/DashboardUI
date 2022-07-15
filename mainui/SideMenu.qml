@@ -15,7 +15,7 @@ Item {
     ListModel {
         id: menuModel
         ListElement { text: "Dashboard" }
-        ListElement { text: "Inbox" }
+        ListElement { text: "Products" }
         ListElement { text: "Calendar" }
         ListElement { text: "Courses" }
         ListElement { text: "Latest News" }
