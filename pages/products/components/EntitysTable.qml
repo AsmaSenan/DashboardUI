@@ -3,12 +3,14 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import Qt.labs.qmlmodels 1.0
 
+import "../../../imports/globalComponents"
+
 import utils 1.0
 import myControls as My
 TableView {
 
     property alias tableContent :  tableView.model
-//    property alias tableRow :  tableData.row
+    //    property alias tableRow :  tableData.row
     property bool visibleEdit
 
 
@@ -17,23 +19,17 @@ TableView {
 
 
 
-    function insertNewRow(newRow, table){
-        switch(table){
-        case "entity":
+    function insertNewRow(newRow){
             tableEntity.insertRow(1, newRow)
-            break;
-        case "unit":
-            tableUnit.insertRow(1, newRow)
-            break;
-
-        }
-
     }
 
     id: tableView
+
+
     columnSpacing: 1
     rowSpacing: 1
     boundsBehavior: Flickable.StopAtBounds
+    implicitWidth: contentWidth + 20
 
     model: tableContent
 
@@ -43,14 +39,12 @@ TableView {
         DelegateChoice {
             id: editId
             column: editBtn
-            delegate: Button {
-                implicitHeight: 30
-                text: (row !== 0)? "" : "Edit";
-                hoverEnabled: (row !== 0)? true : false;
-                icon.name: "Edit"
-                icon.source:(row !== 0)? Style.image("icons/edit"): "/";
-                visible: visibleEdit
+            delegate: My.Button {
+                implicitWidth: 80
+                implicitHeight: 40
 
+                hoverEnabled: (row !== 0)? true : false;
+                visible: visibleEdit
                 onClicked: (row !== 0)? winld.active = true : "" ;
                 Loader {
                     id: winld
@@ -59,8 +53,7 @@ TableView {
                         id: appWindow
                         title: "Basic layouts"
                         property int margin: 11
-//                        flags: Qt.WindowStaysOnTopHint
-
+                        //                        flags: Qt.WindowStaysOnTopHint
 
                         Component.onCompleted: {
                             width = mainLayout.implicitWidth + 45 * margin
@@ -83,76 +76,68 @@ TableView {
 
 
                 background: Rectangle {
-//                    color: "#000"
+                    //                    color: "#000"
                     Image{
-                        height: 28
+                        height: 25
                         fillMode: Image.PreserveAspectFit
                         anchors.centerIn: parent
                         source: Style.image("icons/edit")
                         visible: (row !== 0)? true : false;
                     }
-
-                    CustomBorder
-                    {
+                    CustomBorder {
                         commonBorder: true
                         commonBorderWidth: 1
                         borderColor: "#9c9c9c"
                     }
-
-
                 }
-
+                contentItem: Item{
+                    anchors.fill: parent
+                    Label {
+                        anchors.centerIn: parent
+                        color: "#000"
+                        text: (row !== 0)? "" : "Edit";
+                    }
+                }
             }
         }
 
         DelegateChoice {
             column: delBtn
             delegate: Button {
-                implicitHeight: 30
-                text: (row !== 0)? "" : "Delete";
-                icon.name: "Delete"
-                icon.source: (row !== 0)? Style.image("icons/delete") : "/";
+                implicitWidth: 80
+                implicitHeight: 40
+
                 onClicked: (row !== 0)? tableContent.removeRow(row) : "" ;
                 hoverEnabled: (row !== 0)? true : false;
                 background: Rectangle {
-                    color: "#000"
-
-                    CustomBorder
-                    {
+                    //                    color: "#000"
+                    Image{
+                        height: 25
+                        fillMode: Image.PreserveAspectFit
+                        anchors.centerIn: parent
+                        source: Style.image("icons/delete")
+                        visible: (row !== 0)? true : false;
+                    }
+                    CustomBorder{
                         commonBorder: true
                         commonBorderWidth: 1
                         borderColor: "#9c9c9c"
                     }
-
-
                 }
-
-
+                contentItem: Item{
+                    anchors.fill: parent
+                    Label {
+                        anchors.centerIn: parent
+                        color: "#000"
+                        text: (row !== 0)? "" : "Delete";
+                    }
+                }
             }
         }
 
         DelegateChoice {
-            delegate: TextField {
+            delegate: CellTextField {
                 text: model.display
-                selectByMouse: true
-                implicitWidth: 150
-                implicitHeight: 40
-
-                onAccepted: model.display = text
-                horizontalAlignment: "AlignHCenter"
-                verticalAlignment: "AlignVCenter"
-                readOnly: (row != 0)? false : true;
-                background: Rectangle {
-                    CustomBorder
-                    {
-                        commonBorder: true
-                        commonBorderWidth: 1
-                        borderColor: "#9c9c9c"
-                    }
-
-
-                }
-
             }
         }
     }

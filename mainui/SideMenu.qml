@@ -16,10 +16,10 @@ Item {
         id: menuModel
         ListElement { text: "Dashboard" }
         ListElement { text: "Products" }
-        ListElement { text: "Calendar" }
-        ListElement { text: "Courses" }
-        ListElement { text: "Latest News" }
-        ListElement { text: "Web Radio" }
+        ListElement { text: "Invoices" }
+        ListElement { text: "Payments" }
+        ListElement { text: "Expenses" }
+        ListElement { text: "Employees" }
     }
 
     Rectangle {

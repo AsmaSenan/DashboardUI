@@ -17,15 +17,16 @@ Item {
 //    clip: true
 
     ColumnLayout {
+        id: colLayout
         anchors.fill: parent
-        spacing: Style.resize(20)
+        spacing: 20
 
 
         Label {
             id: txt1
             width: parent.width
             wrapMode: Label.Wrap
-            font.pointSize: 20
+            font.pixelSize: Style.fontSizeL
             text: "Items"
             Layout.alignment: Qt.AlignHCenter
             horizontalAlignment: Qt.AlignHCenter
@@ -46,7 +47,7 @@ Item {
                     edit: "/",
                     del: "/",
                 }
-                mainTable.insertNewRow(newRow, "entity")
+                mainTable.insertNewRow(newRow)
             }
 
         }
@@ -55,9 +56,9 @@ Item {
 
         EntitysTable {
             id: mainTable
-            Layout.fillWidth: true
+            width: contentWidth
             Layout.fillHeight: true
-            leftMargin: 24
+            Layout.alignment: Qt.AlignHCenter
 
             tableContent: TableModel {
                 id:tableEntity

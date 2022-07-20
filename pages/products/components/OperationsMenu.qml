@@ -44,19 +44,19 @@ RowLayout{
         }
     }
 
-    ButtonStyle {
-        txt: "Search"
-        txtColor: "black"
+    Button {
+        text: "Search"
+//        txtColor: "black"
 
     }
 
 
-    ButtonStyle {
+    Button {
 
         id: addRowBtn
-        txt: "Add Item"
-        btnColor: "#309afc"
-        txtColor: hovered? "blak": "white"
+        text: "Add Item"
+//        btnColor: "#309afc"
+//        txtColor: hovered? "blak": "white"
         onClicked: operationLayout.newData()
 
     }

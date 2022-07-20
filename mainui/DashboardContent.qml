@@ -28,6 +28,7 @@ Item {
         id: mainContent
         width: (parent.width - mainMenu.width)
         height: (parent.height - header.height)
+
         anchors.left: mainMenu.right
         anchors.top: header.bottom
     }

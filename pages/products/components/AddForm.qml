@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Qt.labs.qmlmodels 1.0
 
-
+import utils 1.0
 
 ColumnLayout {
 
@@ -194,86 +194,98 @@ ColumnLayout {
         title: "Units"
         Layout.fillWidth: true
         Layout.fillHeight: true
-
-
-//        onClicked: function(){
-//            var newRow = {
-//                id: "",
-//                num: "",
-//                name: "",
-//                type: "",
-//                amount: 0,
-//                price: 0.0,
-//                edit: "/",
-//                del: "/"
-//            }
-//            mainTable.insertNewRow(newRow)
-//        }
-
-        TableTemplate {
-            id: unitsTable
+        clip: true
+        ColumnLayout{
 
             anchors.fill: parent
-            tableContent: TableModel {
-                id:tableData
+            spacing: 30
+            clip: true
 
-                TableModelColumn { display: "quantity" }
-                TableModelColumn { display: "unit" }
-                TableModelColumn { display: "level" }
-                TableModelColumn { display: "barcode" }
-                TableModelColumn { display: "defaultUnit" }
-                TableModelColumn { display: "deleteUnit" }
+            Button {
 
-                // Each row is one type of fruit that can be ordered
-
-
-                rows: [
-                    {
-                        quantity: "Quantity",
-                        unit: "Unit",
-                        level: "Level",
-                        barcode: "Barcode",
-                        defaultUnit: "Default",
-                        deleteUnit: "/"
-                    },
-                    {
-                        // Each property is one cell/column.
-                        quantity: 1111,
-                        unit: 1010,
-                        level: "ZZZ",
-                        barcode: "Barcode",
-                        defaultUnit: false,
-                        deleteUnit: "/"
-                    },
-                    {
-                        // Each property is one cell/column.
-                        quantity: 1111,
-                        unit: 1010,
-                        level: "XXX",
-                        barcode: "Barcode",
-                        defaultUnit: true,
-                        deleteUnit: "/"
-                    },
-                    {
-                        quantity: 2222,
-                        unit: 2020,
-                        level: "QQQ",
-                        barcode: "Barcode",
-                        defaultUnit: false,
-                        deleteUnit: "/"
+                id: addUnitBtn
+                text: "Add Item"
+                onClicked: function(){
+                    var newUnit = {
+                        quantity: "",
+                        unit: "",
+                        level: "",
+                        barcode: "",
+                        defaultUnit: "/",
+                        deleteUnit: "/",
                     }
-                ]
+                    unitsTable.insertNewUnit(newUnit)
+                }
+            }
+            TableTemplate {
+
+                id: unitsTable
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.alignment: Qt.AlignHCenter
+
+                tableContent: TableModel {
+                    id:unitData
+
+                    TableModelColumn { display: "quantity" }
+                    TableModelColumn { display: "unit" }
+                    TableModelColumn { display: "level" }
+                    TableModelColumn { display: "barcode" }
+                    TableModelColumn { display: "defaultUnit" }
+                    TableModelColumn { display: "deleteUnit" }
+
+                    // Each row is one type of fruit that can be ordered
 
 
+                    rows: [
+                        {
+                            quantity: "Quantity",
+                            unit: "Unit",
+                            level: "Level",
+                            barcode: "Barcode",
+                            defaultUnit: "Default",
+                            deleteUnit: "/"
+                        },
+                        {
+                            // Each property is one cell/column.
+                            quantity: 1111,
+                            unit: 1010,
+                            level: "ZZZ",
+                            barcode: "Barcode",
+                            defaultUnit: false,
+                            deleteUnit: "/"
+                        },
+                        {
+                            // Each property is one cell/column.
+                            quantity: 1111,
+                            unit: 1010,
+                            level: "XXX",
+                            barcode: "Barcode",
+                            defaultUnit: true,
+                            deleteUnit: "/"
+                        },
+                        {
+                            quantity: 2222,
+                            unit: 2020,
+                            level: "QQQ",
+                            barcode: "Barcode",
+                            defaultUnit: false,
+                            deleteUnit: "/"
+                        }
+                    ]
+
+
+
+                }
+
+                visibleEdit: false
+
+                editBtn: 6
+                delBtn: 5
 
             }
-
-            visibleEdit: false
-
-            editBtn: 6
-            delBtn: 5
-
         }
+
     }
 
     GroupBox {

@@ -26,7 +26,6 @@
         <file>imports/myControls/ToolButton.qml</file>
         <file>pages/products/components/AddForm.qml</file>
         <file>pages/products/components/ButtonStyle.qml</file>
-        <file>pages/products/components/CustomBorder.qml</file>
         <file>pages/products/components/EntitysTable.qml</file>
         <file>pages/products/components/InputField.qml</file>
         <file>pages/products/components/OperationsMenu.qml</file>
@@ -37,5 +36,7 @@
         <file>pages/products/tabPages/Units.qml</file>
         <file>assets/icons/delete.png</file>
         <file>assets/icons/edit.png</file>
+        <file>imports/globalComponents/CustomBorder.qml</file>
+        <file>imports/globalComponents/CellTextField.qml</file>
     </qresource>
 </RCC>
