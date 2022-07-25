@@ -29,6 +29,7 @@ TableView {
     columnSpacing: 1
     rowSpacing: 1
     boundsBehavior: Flickable.StopAtBounds
+    implicitWidth: contentItem.childrenRect.width + 20
 
     model: tableContent
 

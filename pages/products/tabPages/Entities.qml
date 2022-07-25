@@ -87,7 +87,7 @@ Item {
                         // Each property is one cell/column.
                         id: 1111,
                         num: 1010,
-                        name: "Item 1 ",
+                        name: "Item 1rrrrrrrrrrrrrrr ",
                         type: "A",
                         amount: 500,
                         price: 1.50,
