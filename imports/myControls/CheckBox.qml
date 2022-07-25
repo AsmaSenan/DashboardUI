@@ -7,21 +7,23 @@ import utils 1.0
 T.CheckBox {
     id: root
 
-    implicitWidth: 50
+    implicitWidth: 120
     implicitHeight: 50
 
-    contentItem: Rectangle {
-        anchors.fill: parent
+    background: Rectangle {
+        id: checkRec
+        width: parent.height
+        height: width
         color: "transparent"
-        border.color: Style.inactiveColor
+        border.color: Style.mainColor
     }
 
     indicator: Image {
         id: buttonImage
-        width: (parent.width - 20)
-        height: (parent.height - 20)
-        anchors.centerIn: parent
-        source: Style.image("sheets/check")
+        width: (checkRec.width - 20)
+        height: (checkRec.height - 20)
+        anchors.centerIn: checkRec
+        source: Style.image("icons/check")
         visible: root.checked
         ColorOverlay {
             anchors.fill: buttonImage
@@ -30,4 +32,16 @@ T.CheckBox {
             visible: root.checked
         }
     }
+    contentItem: Item{
+        width: (parent.width - checkRec.width - 10)
+        height: parent.height
+        anchors.left: checkRec.right
+        anchors.leftMargin: 10
+
+        Label {
+            text: root.text
+            anchors.verticalCenter: parent.verticalCenter
+        }
+    }
+
 }

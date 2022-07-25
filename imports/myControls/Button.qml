@@ -9,21 +9,21 @@ T.Button {
     implicitWidth: 120
     implicitHeight: 40
 
+
     background: Item {
         anchors.fill: parent
-        DropShadow {
-            anchors.fill: backgroundFill
-            verticalOffset: 3
-            radius: 8
-//            samples: 17
-            color: "#80000000"
-            source: backgroundFill
-        }
+//        DropShadow {
+//            anchors.fill: backgroundFill
+//            verticalOffset: 3
+//            radius: 8
+//            color: Style.inactiveColor
+//            source: backgroundFill
+//        }
         Rectangle {
             id: backgroundFill
             anchors.fill: parent
-            radius: 30
-            color: (root.pressed || !enabled) ? Style.inactiveColor : Style.mainColor
+            radius: 4
+            color: Style.mainColor
         }
     }
 

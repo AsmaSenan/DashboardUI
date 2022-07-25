@@ -14,7 +14,7 @@ T.Switch {
         width: parent.width / 3
         height: parent.height
         color: "transparent"
-        border.color: Style.inactiveColor
+        border.color: Style.mainColor
         radius: width / 3
     }
 
@@ -22,7 +22,7 @@ T.Switch {
         id: indicator
         width: background.width / 2
         height: parent.height
-        color: Style.mainColor
+        color: root.checked ? Style.mainColor: Style.inactiveColor
         radius: width / 2
         x: root.checked ? (background.width - width) : 0
         Behavior on x {

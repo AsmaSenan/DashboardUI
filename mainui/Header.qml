@@ -15,7 +15,7 @@ Item {
         anchors.fill: backgroundColor
         verticalOffset: 3
         radius: 0.5
-        color: "#80000000"
+        color: Style.mainColor
         source: backgroundColor
     }
 

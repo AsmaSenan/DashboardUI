@@ -10,9 +10,9 @@ QtObject {
     property int screenWidth: 1920
     property int screenHeight: 1080
 
-    property string bgColor: "#D1DBE1"
-    property string mainColor: "#20a2a2"
-    property string inactiveColor: "#def1f1"
+    property string bgColor: "#e6ecf0"
+    property string mainColor: "#2196F3"
+    property string inactiveColor: "#c5c9c9"
 
     property string imgPath: "../../assets/"
 

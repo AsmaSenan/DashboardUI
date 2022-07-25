@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     engine.addImportPath("qrc:/imports");
     engine.addImportPath("qrc:/mainui");
 QQuickStyle::setStyle("myControls");
-QQuickStyle::setFallbackStyle("Material");
+QQuickStyle::setFallbackStyle("Material.Teal");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

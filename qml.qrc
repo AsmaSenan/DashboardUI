@@ -38,5 +38,6 @@
         <file>assets/icons/edit.png</file>
         <file>imports/globalComponents/CustomBorder.qml</file>
         <file>imports/globalComponents/CellTextField.qml</file>
+        <file>assets/icons/check.png</file>
     </qresource>
 </RCC>

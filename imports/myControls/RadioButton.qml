@@ -11,23 +11,32 @@ T.RadioButton {
 
     property string checkedColor: Style.mainColor
 
-    indicator: Rectangle {
-        id: indicatorRect
-        width: root.height
-        height: root.height
-        radius: (width / 2)
-        color: root.checked ? root.checkedColor : Style.inactiveColor
+    background: Rectangle {
+        id: fillRect
+        width: parent.height
+        height: width
+        radius: width / 2
+        color: "transparent"
+        border.color:  Style.mainColor
     }
-
-    contentItem: Item {
-        width: (parent.width - indicatorRect.width - 10)
+    indicator:  Rectangle {
+        width: (fillRect.width - 10)
+        height: width
+        anchors.centerIn: fillRect
+        radius: width / 2
+        visible: root.checked
+        color: Style.mainColor
+    }
+    contentItem:  Item{
+        width: (parent.width - fillRect.width - 10)
         height: parent.height
-        anchors.left: indicatorRect.right
+        anchors.left: fillRect.right
         anchors.leftMargin: 10
+
         Label {
-            anchors.verticalCenter: parent.verticalCenter
-            color: root.checked ? root.checkedColor : Style.inactiveColor
             text: root.text
+            anchors.verticalCenter: parent.verticalCenter
         }
+
     }
 }
