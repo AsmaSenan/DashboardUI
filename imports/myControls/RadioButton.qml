@@ -13,7 +13,7 @@ T.RadioButton {
 
     background: Rectangle {
         id: fillRect
-        width: parent.height
+        width: root.height
         height: width
         radius: width / 2
         color: "transparent"

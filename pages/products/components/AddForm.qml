@@ -195,103 +195,98 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         clip: true
-        ScrollView {
-            width: parent.width
-            height: parent.height
 
-            ColumnLayout{
-                anchors.fill: parent
-                spacing: 30
-                clip: true
+        ColumnLayout{
+            anchors.fill: parent
+            spacing: 30
 
-                Button {
+            Button {
 
-                    id: addUnitBtn
-                    text: "Add Item"
-                    onClicked: function(){
-                        var newUnit = {
-                            quantity: "",
-                            unit: "",
-                            level: "",
-                            barcode: "",
-                            defaultUnit: "/",
-                            deleteUnit: "/",
-                        }
-                        unitsTable.insertNewUnit(newUnit)
+                id: addUnitBtn
+                text: "Add Item"
+                onClicked: function(){
+                    console.log(unitsTable.height)
+                    console.log(units.height)
+
+                    var newUnit = {
+                        quantity: "",
+                        unit: "",
+                        level: "",
+                        barcode: "",
+                        defaultUnit: "/",
+                        deleteUnit: "/",
                     }
-                }
-                TableTemplate {
-
-                    id: unitsTable
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-//                    Layout.alignment: Qt.AlignHCenter
-
-                    tableContent: TableModel {
-                        id:unitData
-
-                        TableModelColumn { display: "quantity" }
-                        TableModelColumn { display: "unit" }
-                        TableModelColumn { display: "level" }
-                        TableModelColumn { display: "barcode" }
-                        TableModelColumn { display: "defaultUnit" }
-                        TableModelColumn { display: "deleteUnit" }
-
-                        // Each row is one type of fruit that can be ordered
-
-
-                        rows: [
-                            {
-                                quantity: "Quantity",
-                                unit: "Unit",
-                                level: "Level",
-                                barcode: "Barcode",
-                                defaultUnit: "Default",
-                                deleteUnit: "/"
-                            },
-                            {
-                                // Each property is one cell/column.
-                                quantity: 1111,
-                                unit: 1010,
-                                level: "ZZZ",
-                                barcode: "Barcode",
-                                defaultUnit: false,
-                                deleteUnit: "/"
-                            },
-                            {
-                                // Each property is one cell/column.
-                                quantity: 1111,
-                                unit: 1010,
-                                level: "XXX",
-                                barcode: "Barcode",
-                                defaultUnit: true,
-                                deleteUnit: "/"
-                            },
-                            {
-                                quantity: 2222,
-                                unit: 2020,
-                                level: "QQQ",
-                                barcode: "Barcode",
-                                defaultUnit: false,
-                                deleteUnit: "/"
-                            }
-                        ]
-
-
-
-                    }
-
-                    visibleEdit: false
-
-                    editBtn: 6
-                    delBtn: 5
-
+                    unitsTable.insertNewUnit(newUnit)
                 }
             }
+            TableTemplate {
 
-        }
+                id: unitsTable
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
+                tableContent: TableModel {
+                    id:unitData
+
+                    TableModelColumn { display: "quantity" }
+                    TableModelColumn { display: "unit" }
+                    TableModelColumn { display: "level" }
+                    TableModelColumn { display: "barcode" }
+                    TableModelColumn { display: "defaultUnit" }
+                    TableModelColumn { display: "deleteUnit" }
+
+                    // Each row is one type of fruit that can be ordered
+
+
+                    rows: [
+                        {
+                            quantity: "Quantity",
+                            unit: "Unit",
+                            level: "Level",
+                            barcode: "Barcode",
+                            defaultUnit: "Default",
+                            deleteUnit: "/"
+                        },
+                        {
+                            // Each property is one cell/column.
+                            quantity: 1111,
+                            unit: 1010,
+                            level: "ZZZ",
+                            barcode: "Barcode",
+                            defaultUnit: false,
+                            deleteUnit: "/"
+                        },
+                        {
+                            // Each property is one cell/column.
+                            quantity: 1111,
+                            unit: 1010,
+                            level: "XXX",
+                            barcode: "Barcode",
+                            defaultUnit: true,
+                            deleteUnit: "/"
+                        },
+                        {
+                            quantity: 2222,
+                            unit: 2020,
+                            level: "QQQ",
+                            barcode: "Barcode",
+                            defaultUnit: false,
+                            deleteUnit: "/"
+                        }
+                    ]
+
+
+
+                }
+
+                visibleEdit: false
+
+                editBtn: 6
+                delBtn: 5
+
+            }
         }
+    }
 
 
     GroupBox {
