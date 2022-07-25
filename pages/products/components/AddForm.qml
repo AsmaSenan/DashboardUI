@@ -7,6 +7,8 @@ import utils 1.0
 
 ColumnLayout {
 
+    property int rowTable
+
 
     GroupBox {
         id: gridBox
@@ -45,27 +47,32 @@ ColumnLayout {
 
             //3th col
             InputField {
-                placeholderText: "Number"
+                id:number
+                text:tableEntity.rows[rowTable].num
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
             }
             InputField {
-                placeholderText: "Nmae"
+                id: name
+                text:tableEntity.rows[rowTable].name
+
                 Layout.columnSpan: 5
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
             }
             InputField {
-                placeholderText: "F Nmae"
+                id: forignNmae
+                text: tableEntity.rows[rowTable].forignNmae
                 Layout.columnSpan: 5
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
             }
             InputField {
-                placeholderText: "Start date"
+                id: startDate
+                text: tableEntity.rows[rowTable].startDate
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -94,7 +101,7 @@ ColumnLayout {
             }
             TextArea {
                 id: notes
-                placeholderText: "\n \n \n This fills the whole cell \n \n \n"
+                text: tableEntity.rows[rowTable].notes
                 Layout.columnSpan: 5
                 wrapMode: TextArea.Wrap
                 Layout.fillHeight: true
@@ -112,7 +119,8 @@ ColumnLayout {
             //4th col
             Label { text: "Id" }
             InputField {
-                placeholderText: "Id"
+                id: id
+                text: tableEntity.rows[rowTable].id
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
@@ -150,35 +158,40 @@ ColumnLayout {
             //5th column
             Label { text: "Type" }
             InputField {
-                placeholderText: "end date"
+                id: endDate
+                text: tableEntity.rows[rowTable].endDate
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
             }
             InputField {
-                placeholderText: "الكمية المتوفرة"
+                id: avaQuantity
+                text: tableEntity.rows[rowTable].avaQuantity
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
             }
             InputField {
-                placeholderText: "كمية الطلب"
+                id: reqQuantity
+                text: tableEntity.rows[rowTable].reqQuantity
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
             }
             InputField {
-                placeholderText: "أقل كمية"
+                id: lessQuantity
+                text: tableEntity.rows[rowTable].lessQuantity
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
             }
             InputField {
-                placeholderText: "Type"
+                id: type
+                text: tableEntity.rows[rowTable].type
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.minimumHeight: implicitHeight
@@ -203,7 +216,7 @@ ColumnLayout {
             Button {
 
                 id: addUnitBtn
-                text: "Add Item"
+                text: "+ Add Item"
                 onClicked: function(){
                     console.log(unitsTable.height)
                     console.log(units.height)

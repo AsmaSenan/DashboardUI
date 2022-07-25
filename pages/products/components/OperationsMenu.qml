@@ -54,7 +54,7 @@ RowLayout{
     Button {
 
         id: addRowBtn
-        text: "Add Item"
+        text: "+ Add Item"
 //        btnColor: "#309afc"
 //        txtColor: hovered? "blak": "white"
         onClicked: operationLayout.newData()

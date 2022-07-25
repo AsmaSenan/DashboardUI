@@ -10,9 +10,7 @@ import myControls as My
 TableView {
 
     property alias tableContent :  tableView.model
-    //    property alias tableRow :  tableData.row
     property bool visibleEdit
-
 
     property int editBtn
     property int delBtn
@@ -45,7 +43,10 @@ TableView {
 
                 hoverEnabled: (row !== 0)? true : false;
                 visible: visibleEdit
-                onClicked: (row !== 0)? winld.active = true : "" ;
+
+                onClicked:(row !== 0)? winld.active = true : "" ;
+
+
                 Loader {
                     id: winld
                     active: false
@@ -68,6 +69,7 @@ TableView {
                             id: mainLayout
                             anchors.fill: parent
                             anchors.margins: appWindow.margin
+                            rowTable: row
 
                         }
 
@@ -141,4 +143,5 @@ TableView {
             }
         }
     }
+
 }
