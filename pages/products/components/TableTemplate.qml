@@ -5,6 +5,9 @@ import Qt.labs.qmlmodels 1.0
 
 import "../../../imports/globalComponents"
 
+import utils 1.0
+import myControls as My
+
 
 TableView {
 
@@ -22,37 +25,47 @@ TableView {
 
     id: tableUnits
 
-    implicitHeight: rows * 20
     columnSpacing: 1
     rowSpacing: 1
     boundsBehavior: Flickable.StopAtBounds
+    implicitWidth: contentItem.childrenRect.width + 20
+    implicitHeight: contentItem.childrenRect.height + 20
+
     model: tableContent
-    interactive: false
 
     delegate: DelegateChooser {
 
         DelegateChoice {
             column: delBtn
             delegate: Button {
-                implicitWidth: 50
-                implicitHeight: 30
-                text: (row !== 0)? "" : "Delete";
-                icon.name: "Delete"
-                icon.source: (row !== 0)? "/images/icons/images/icons/delete.png" : "/";
-                onClicked: (row !== 0)? tableData.removeRow(row) : "" ;
+                implicitWidth: 80
+                implicitHeight: 40
+
+                onClicked: (row !== 0)? tableContent.removeRow(row) : "" ;
                 hoverEnabled: (row !== 0)? true : false;
                 background: Rectangle {
-                    CustomBorder
-                    {
+                    //                    color: "#000"
+                    Image{
+                        height: 25
+                        fillMode: Image.PreserveAspectFit
+                        anchors.centerIn: parent
+                        source: Style.image("icons/delete")
+                        visible: (row !== 0)? true : false;
+                    }
+                    CustomBorder{
                         commonBorder: true
                         commonBorderWidth: 1
                         borderColor: "#9c9c9c"
                     }
-
-
                 }
-
-
+                contentItem: Item{
+                    anchors.fill: parent
+                    Label {
+                        anchors.centerIn: parent
+                        color: "#000"
+                        text: (row !== 0)? "" : "Delete";
+                    }
+                }
             }
         }
         DelegateChoice {

@@ -5,7 +5,7 @@ import utils 1.0
 
 Item {
     id:root
-    implicitWidth: textField.contentWidth + 40
+    implicitWidth: textField.contentWidth + 20
     implicitHeight: 40
 
     property var text

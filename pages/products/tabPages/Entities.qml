@@ -56,7 +56,6 @@ Item {
 
         EntitysTable {
             id: mainTable
-            width: contentWidth
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignHCenter
 
