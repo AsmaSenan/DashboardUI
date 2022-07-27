@@ -15,41 +15,74 @@ Item{
     property bool fullSize: true
 
     Page{
+        id: productPage
         anchors.fill: parent
 
         header: TabBar {
             id: bar
+            height: 45
+
             width: parent.width
+            anchors.top: productPage.top
+//            height: 40
             currentIndex: 0
             TabButton {
-                text: qsTr("Entitys")
                 height: parent.height
+                anchors.verticalCenter: parent.verticalCenter
+                contentItem: Item {
+                    anchors.fill: parent
+                    Label{
+                        text: qsTr("Entitys")
+                        anchors.centerIn: parent
+                        font.family: Style.fontFamilyBold
+                        color: bar.currentIndex === 0 ? "#fff" : Style.mainColor
+                    }
+                }
                 background: Rectangle {
                     color: bar.currentIndex === 0 ? Style.mainColor : Style.inactiveColor
                 }
             }
             TabButton {
-                text: qsTr("Entity Types")
                 height: parent.height
-
+                anchors.verticalCenter: parent.verticalCenter
+                contentItem: Item {
+                    anchors.fill: parent
+                    Label{
+                        text: qsTr("Entity Types")
+                        anchors.centerIn: parent
+                        color: bar.currentIndex === 1 ? "#fff" : Style.mainColor
+                    }
+                }
                 background: Rectangle {
                     color: bar.currentIndex === 1 ? Style.mainColor : Style.inactiveColor
                 }
-
             }
             TabButton {
-                text: qsTr("Units")
                 height: parent.height
+                anchors.verticalCenter: parent.verticalCenter
 
+                contentItem: Item {
+                    anchors.fill: parent
+                    Label{
+                        text: qsTr("Units")
+                        anchors.centerIn: parent
+                        color: bar.currentIndex === 2 ? "#fff" : Style.mainColor
+                    }
+                }
                 background: Rectangle {
                     color: bar.currentIndex === 2 ? Style.mainColor : Style.inactiveColor
                 }
             }
 
             background: Rectangle{
-                anchors.fill: parent
+                anchors.fill: bar
                 color:Style.inactiveColor
             }
+        }
+
+        background: Rectangle{
+            anchors.fill: parent
+            color:Style.bgColor
         }
 
 
