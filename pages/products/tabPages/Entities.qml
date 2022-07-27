@@ -109,7 +109,7 @@ Item {
                     {
                         id: 2222,
                         num: 2020,
-                        name: "CCC",
+                        name: "It is loooong name",
                         type: "C",
                         amount: 1500,
                         price: 0.50,

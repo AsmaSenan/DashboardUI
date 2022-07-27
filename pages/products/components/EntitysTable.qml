@@ -57,8 +57,8 @@ TableView {
                         //                        flags: Qt.WindowStaysOnTopHint
 
                         Component.onCompleted: {
-                            width = mainLayout.implicitWidth + 45 * margin
-                            height = mainLayout.implicitHeight + 10 * margin
+                            width = mainLayout.implicitWidth + 20 * margin
+                            height = mainLayout.implicitHeight + 22 * margin
                         }
 
 

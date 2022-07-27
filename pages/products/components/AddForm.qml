@@ -64,7 +64,7 @@ ColumnLayout {
             }
             InputField {
                 id: forignNmae
-                text: tableEntity.rows[rowTable].forignNmae
+//                text: tableEntity.rows[rowTable].forignNmae
                 Layout.columnSpan: 5
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -72,7 +72,7 @@ ColumnLayout {
             }
             InputField {
                 id: startDate
-                text: tableEntity.rows[rowTable].startDate
+//                text: tableEntity.rows[rowTable].startDate
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -101,7 +101,7 @@ ColumnLayout {
             }
             TextArea {
                 id: notes
-                text: tableEntity.rows[rowTable].notes
+//                text: tableEntity.rows[rowTable].notes
                 Layout.columnSpan: 5
                 wrapMode: TextArea.Wrap
                 Layout.fillHeight: true
@@ -159,7 +159,7 @@ ColumnLayout {
             Label { text: "Type" }
             InputField {
                 id: endDate
-                text: tableEntity.rows[rowTable].endDate
+//                text: tableEntity.rows[rowTable].endDate
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -167,7 +167,7 @@ ColumnLayout {
             }
             InputField {
                 id: avaQuantity
-                text: tableEntity.rows[rowTable].avaQuantity
+//                text: tableEntity.rows[rowTable].avaQuantity
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -175,7 +175,7 @@ ColumnLayout {
             }
             InputField {
                 id: reqQuantity
-                text: tableEntity.rows[rowTable].reqQuantity
+//                text: tableEntity.rows[rowTable].reqQuantity
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -183,7 +183,7 @@ ColumnLayout {
             }
             InputField {
                 id: lessQuantity
-                text: tableEntity.rows[rowTable].lessQuantity
+//                text: tableEntity.rows[rowTable].lessQuantity
                 Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -211,12 +211,15 @@ ColumnLayout {
 
         ColumnLayout{
             anchors.fill: parent
-            spacing: 30
+            spacing: 20
+            clip: true
 
             Button {
 
                 id: addUnitBtn
-                text: "+ Add Item"
+                text: "+ Add Unit"
+                Layout.alignment: Qt.AlignHCenter
+
                 onClicked: function(){
                     console.log(unitsTable.height)
                     console.log(units.height)
@@ -226,7 +229,7 @@ ColumnLayout {
                         unit: "",
                         level: "",
                         barcode: "",
-                        defaultUnit: "/",
+                        defaultUnit: "false",
                         deleteUnit: "/",
                     }
                     unitsTable.insertNewUnit(newUnit)
@@ -235,8 +238,8 @@ ColumnLayout {
             TableTemplate {
 
                 id: unitsTable
-                Layout.fillWidth: true
                 Layout.fillHeight: true
+                Layout.alignment: Qt.AlignHCenter
 
                 tableContent: TableModel {
                     id:unitData
@@ -261,6 +264,14 @@ ColumnLayout {
                             deleteUnit: "/"
                         },
                         {
+                            quantity: "It is long word",
+                            unit: "It is long word",
+                            level: "It is long word",
+                            barcode: "It is long word",
+                            defaultUnit: false,
+                            deleteUnit: "/"
+                        },
+                        {
                             // Each property is one cell/column.
                             quantity: 1111,
                             unit: 1010,
@@ -279,10 +290,10 @@ ColumnLayout {
                             deleteUnit: "/"
                         },
                         {
-                            quantity: 2222,
-                            unit: 2020,
-                            level: "QQQ",
-                            barcode: "Barcode",
+                            quantity: "It is long word",
+                            unit: "It is long word",
+                            level: "It is long word",
+                            barcode: "It is long word",
                             defaultUnit: false,
                             deleteUnit: "/"
                         }
@@ -291,12 +302,6 @@ ColumnLayout {
 
 
                 }
-
-                visibleEdit: false
-
-                editBtn: 6
-                delBtn: 5
-
             }
         }
     }

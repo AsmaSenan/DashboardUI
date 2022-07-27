@@ -20,20 +20,38 @@ Item{
         header: TabBar {
             id: bar
             width: parent.width
+            currentIndex: 0
             TabButton {
-                text: qsTr("Entity")
+                text: qsTr("Entitys")
+                height: parent.height
+                background: Rectangle {
+                    color: bar.currentIndex === 0 ? Style.mainColor : Style.inactiveColor
+                }
             }
             TabButton {
-                text: qsTr("Entity Type")
+                text: qsTr("Entity Types")
+                height: parent.height
+
+                background: Rectangle {
+                    color: bar.currentIndex === 1 ? Style.mainColor : Style.inactiveColor
+                }
+
             }
             TabButton {
                 text: qsTr("Units")
+                height: parent.height
+
+                background: Rectangle {
+                    color: bar.currentIndex === 2 ? Style.mainColor : Style.inactiveColor
+                }
+            }
+
+            background: Rectangle{
+                anchors.fill: parent
+                color:Style.inactiveColor
             }
         }
-        background: Rectangle{
-            anchors.fill: parent
-            color:Style.bgColor
-        }
+
 
         contentItem: StackLayout {
             width: parent.width
@@ -51,10 +69,18 @@ Item{
             }
             Item {
                 id: discoverTab
+                anchors.fill: parent
+                anchors.margins: 20
+
+                Button{
+                    anchors.centerIn: parent
+                    text: "my button"
+                }
             }
             Item {
                 id: activityTab
             }
         }
+
     }
 }

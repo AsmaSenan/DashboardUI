@@ -4,23 +4,16 @@ import QtQuick.Controls 2.5
 import Qt.labs.qmlmodels 1.0
 
 import "../../../imports/globalComponents"
-
 import utils 1.0
 import myControls as My
-
 
 TableView {
 
     property alias tableContent :  tableUnits.model
-    property bool visibleEdit
-    property int editBtn
-    property int delBtn
-    property int checkBtn
 
     function insertNewUnit(newRow){
 
         unitData.insertRow(1, newRow)
-
     }
 
     id: tableUnits
@@ -29,14 +22,13 @@ TableView {
     rowSpacing: 1
     boundsBehavior: Flickable.StopAtBounds
     implicitWidth: contentItem.childrenRect.width + 20
-    implicitHeight: contentItem.childrenRect.height + 20
 
     model: tableContent
 
     delegate: DelegateChooser {
 
         DelegateChoice {
-            column: delBtn
+            column: 5
             delegate: Button {
                 implicitWidth: 80
                 implicitHeight: 40
@@ -71,27 +63,34 @@ TableView {
         DelegateChoice {
             column: 4
             delegate:RadioBtn  {
-                txt: (row !== 0)? "" : "Default";
                 visibleRadio: (row !== 0)? true : false
                 isCheck: (row !== 0)? model.display : false
-                implicitWidth: 50
+                implicitWidth: 80
                 implicitHeight: 30
 
                 background: Rectangle {
-
-                    CustomBorder
-                    {
+                    CustomBorder{
                         commonBorder: true
                         commonBorderWidth: 1
                         borderColor: "#9c9c9c"
                     }
                 }
+                contentItem: Item{
+                    anchors.fill: parent
+                    Label {
+                        anchors.centerIn: parent
+                        color: "#000"
+                        text: (row !== 0)? "" : "Default";
+                    }
+                }
+
 
             }
         }
 
         DelegateChoice {
             delegate: CellTextField {
+//                Width: textField.contentWidth + 20
                 text: model.display
             }
         }
