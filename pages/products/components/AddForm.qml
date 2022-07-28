@@ -106,6 +106,7 @@ ColumnLayout {
                 wrapMode: TextArea.Wrap
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+                height: 40
                 verticalAlignment : Qt.AlignVCenter
                 font.pointSize: 10
                 background: Rectangle {
@@ -229,7 +230,7 @@ ColumnLayout {
                         unit: "",
                         level: "",
                         barcode: "",
-                        defaultUnit: "false",
+                        defaultUnit: false,
                         deleteUnit: "/",
                     }
                     unitsTable.insertNewUnit(newUnit)
@@ -312,32 +313,10 @@ ColumnLayout {
         title: "Button layout"
         Layout.fillWidth: true
 
-        RowLayout {
-            id: rowBtnLayout
-            anchors.fill: parent
-
-            Item{
-                Layout.fillWidth: true
+            Button {
+                anchors.centerIn: parent
+                text: "Save"
             }
-
-            ButtonStyle {
-                txt: "Button"
-                btnColor: "#337ab7"
-                txtColor: hovered? "black": "white"
-
-            }
-            ButtonStyle {
-                txt: "close"
-                btnColor: "#d9534f"
-                txtColor: hovered? "blcak": "white"
-
-                onClicked: close()
-            }
-            Item{
-                Layout.fillWidth: true
-            }
-
-        }
     }
 
 }

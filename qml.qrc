@@ -25,7 +25,6 @@
         <file>imports/myControls/Switch.qml</file>
         <file>imports/myControls/ToolButton.qml</file>
         <file>pages/products/components/AddForm.qml</file>
-        <file>pages/products/components/ButtonStyle.qml</file>
         <file>pages/products/components/EntitysTable.qml</file>
         <file>pages/products/components/InputField.qml</file>
         <file>pages/products/components/OperationsMenu.qml</file>

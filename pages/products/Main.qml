@@ -34,7 +34,7 @@ Item{
                     Label{
                         text: qsTr("Entitys")
                         anchors.centerIn: parent
-                        font.family: Style.fontFamilyBold
+//                        font.family: Style.fontFamilyBold
                         color: bar.currentIndex === 0 ? "#fff" : Style.mainColor
                     }
                 }
